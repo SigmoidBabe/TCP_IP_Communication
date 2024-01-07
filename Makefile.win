@@ -1,0 +1,28 @@
+# Project: Project_Camera
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = "Project\ Camera/main.o"
+LINKOBJ  = "Project Camera/main.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lstrmiids -luuid
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project_Camera.exe
+CXXFLAGS = $(CXXINCS) "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.17763.0\ucrt\x86" "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.17763.0\um\x86"
+CFLAGS   = $(INCS) "C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt"
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+"Project\ Camera/main.o": Project\ Camera/main.cpp
+	$(CPP) -c "Project Camera/main.cpp" -o "Project Camera/main.o" $(CXXFLAGS)
